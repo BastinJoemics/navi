@@ -82,6 +82,7 @@ module.exports = function (ctx) {
     },
     supportIE: true,
     build: {
+      publicPath: process.env.NODE_ENV === 'production' ? '/data-and-history/' : '/',
       scopeHoisting: true,
       extendWebpack(cfg) {
         cfg.plugins.push(
