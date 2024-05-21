@@ -1,29 +1,3 @@
-<template>
-  <div class="login-page window-height window-width bg-light column items-center no-wrap">
-    <a v-if="!$q.platform.is.mobile || !$q.platform.within.iframe" href="https://github.com/flespi-software/TrackIt/" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0; width: 149px; height: 149px;" src="right-graphite@2x.png" alt="Fork me on GitHub"></a>
-    <div class="login-back flex items-center justify-center">
-      <div class="login-code flex items-center justify-center">
-        Track it!
-      </div>
-    </div>
-    <div v-if="!$route.params.token">
-      <div class="login-card shadow-4 bg-white column items-center justify-center no-wrap">
-        <p class="text-center">Track your devices on the map.</p>
-        <div class="row full-width">
-          <div class="col-12 text-center">
-            <q-btn @click="openWindow(`${$authHost}/login/#/providers`)" icon="mdi-account-circle" color="red-7" rounded label="login / register" size="lg"/>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div v-else>
-      <div class="login-card shadow-4 bg-white column items-center justify-center no-wrap">
-        <q-circular-progress indeterminate color="positive" style="width: 100%; height: 45px" />
-      </div>
-    </div>
-  </div>
-</template>
-
 <script>
 import { mapMutations, mapActions } from 'vuex'
 import { getFromStore } from '../mixins/store'
@@ -101,6 +75,16 @@ export default {
       this.setRegions({ [region.name]: region })
       this.setCurrentRegion(region)
       this.$connector.setRegion(region)
+    },
+        handleTokenLogin() {
+      // New method to handle login with the hardcoded token
+      const hardcodedToken = process.env.VUE_APP_HARDCODED_TOKEN;
+      this.initConnection({ token: hardcodedToken })
+        .then(() => {
+          this.$router.push({ name: 'MyLayout' }); // Replace with your actual route name
+        }).catch(error => {
+          console.error('Login failed with hardcoded token', error);
+        });
     }
   },
   watch: {
@@ -111,6 +95,12 @@ export default {
     }
   },
   created () {
+   if (this.$route.params.token) {
+      this.autoLogin();
+    } else {
+      // Call handleTokenLogin if there's no token in the URL
+      this.handleTokenLogin();
+    }
     if (!this.checkHasToken()) {
       const tokenHandler = (event) => {
         if (typeof event.data === 'string' && ~event.data.indexOf('FlespiLogin|token:')) {

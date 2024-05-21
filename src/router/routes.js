@@ -1,8 +1,9 @@
 
 export default [
   {
-    path: '/',
+    path: '/', // Change to the path you want to use
     component: () => import('layouts/MyLayout'),
+    name: 'MyLayout',
     children: [
       {
         path: 'devices/:devices',

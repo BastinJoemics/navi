@@ -16,6 +16,7 @@
   "dependencies": {
     "@quasar/extras": "^1.5.2",
     "core-js": "^3.14.0",
+    "dotenv": "^16.4.5",
     "flespi-io-js": "github:flespi-software/flespi-io-js",
     "leaflet": "^1.6.0",
     "leaflet-geometryutil": "^0.10.0",
