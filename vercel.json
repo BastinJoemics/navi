@@ -1,20 +1,19 @@
 {
-    "version": 2,
-    "name": "mytracker",
-    "builds": [
+  "version": 2,
+  "name": "mytracker",
+  "builds": [
       {
-        "src": "package.json",
-        "use": "@vercel/static-build",
-        "config": {
-          "distDir": "dist/spa"
-        }
+          "src": "package.json",
+          "use": "@vercel/static-build",
+          "config": {
+              "distDir": "dist/spa"
+          }
       }
-    ],
-    "routes": [
+  ],
+  "routes": [
       {
-        "src": "/(.*)",
-        "dest": "/index.template.html"
+          "src": "/(.*)",
+          "dest": "/index.html"
       }
-    ]
-  }
-  
+  ]
+}
