@@ -18,6 +18,14 @@
     {
       "src": "/(.*)",
       "dest": "/dist/spa/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/dist/spa/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
