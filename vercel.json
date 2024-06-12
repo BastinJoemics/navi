@@ -21,11 +21,11 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/dist/spa/css/app.b6804015.css"
+      "dest": "/css/app.b6804015.css"
   },
       {
           "src": "/(.*)",
-          "dest": "/dist/spa/index.html"
+          "dest": "/index.html"
       }
   ]
 }
