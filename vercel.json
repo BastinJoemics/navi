@@ -16,11 +16,11 @@
           "dest": "/data-and-history/index.html"
       },
       {
-        "src": "/data-and-history/(.*)",
+        "src": "/(.*)",
         "dest": "/data-and-history/css/app.b6804015.css"
     },
     {
-      "src": "/data-and-history/(.*)",
+      "src": "/(.*)",
       "dest": "/dist/spa/css/app.b6804015.css"
   },
       {
