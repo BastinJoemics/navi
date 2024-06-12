@@ -12,8 +12,12 @@
   ],
   "routes": [
       {
-          "src": "/(.*)",
+          "src": "/data-and-history/(.*)",
           "dest": "/data-and-history/index.html"
+      },
+      {
+          "src": "/(.*)",
+          "dest": "/index.html"
       }
   ]
 }
