@@ -13,15 +13,7 @@
   "routes": [
     {
       "src": "/data-and-history/(.*)",
-      "dest": "/data-and-history/index.html"
-    },
-    {
-      "src": "/data-and-history/css/(.*)",
-      "dest": "/dist/spa/css/$1"
-    },
-    {
-      "src": "/data-and-history/js/(.*)",
-      "dest": "/dist/spa/js/$1"
+      "dest": "/dist/spa/$1"
     },
     {
       "src": "/(.*)",
