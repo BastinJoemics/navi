@@ -16,6 +16,10 @@
       "dest": "/dist/spa/$1"
     },
     {
+      "src": "/data-and-history/(.*)",
+      "dest": "/index.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/dist/spa/$1"
     },
