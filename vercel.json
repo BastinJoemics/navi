@@ -2,30 +2,30 @@
   "version": 2,
   "name": "mytracker",
   "builds": [
-      {
-          "src": "package.json",
-          "use": "@vercel/static-build",
-          "config": {
-              "distDir": "dist/spa"
-          }
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist/spa"
       }
+    }
   ],
   "routes": [
-      {
-          "src": "/data-and-history/(.*)",
-          "dest": "/data-and-history/index.html"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/data-and-history/css/app.b6804015.css"
+    {
+      "src": "/data-and-history/(.*)",
+      "dest": "/data-and-history/index.html"
+    },
+    {
+      "src": "/data-and-history/css/(.*)",
+      "dest": "/dist/spa/css/$1"
+    },
+    {
+      "src": "/data-and-history/js/(.*)",
+      "dest": "/dist/spa/js/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "/css/app.b6804015.css"
-  },
-      {
-          "src": "/(.*)",
-          "dest": "/index.html"
-      }
+      "dest": "/dist/spa/$1"
+    }
   ]
 }
