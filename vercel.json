@@ -6,19 +6,11 @@
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist/spa"
+        "distDir": "/src/layouts"
       }
     }
   ],
   "routes": [
-    {
-      "src": "/data-and-history/(.*)",
-      "dest": "/dist/spa/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/dist/spa/index.html"
-    },
     {
       "src": "/(.*)",
       "dest": "/src/layouts/MyLayout.vue"
