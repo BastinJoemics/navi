@@ -16,6 +16,10 @@
           "dest": "/data-and-history/index.html"
       },
       {
+        "src": "/data-and-history/(.*)",
+        "dest": "/data-and-history/css/app.b6804015.css"
+    },
+      {
           "src": "/(.*)",
           "dest": "/dist/spa/index.html"
       }
