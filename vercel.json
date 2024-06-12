@@ -18,6 +18,14 @@
     {
       "src": "/(.*)",
       "dest": "/dist/spa/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/src/layouts/MyLayout.vue"
+    },
+    {
+      "src": "/data-and-history/(.*)",
+      "dest": "/src/layouts/MyLayout.vue"
     }
   ]
 }
